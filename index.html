@@ -96,9 +96,8 @@
         }
 
         a {
-            color: white;
+            color: var(--primary-color);
             text-decoration: none;
-            cursor: pointer;
             transition: all 0.15s ease-in-out;
         }
 
@@ -149,23 +148,20 @@
         .image-container {
             height: 320px;
             background-color: var(--dark-gray);
-            border: 1px solid transparent;
             color: white;
             display: flex;
             justify-content: center;
             align-items: center;
             flex-shrink: 0;
             overflow: hidden;
-            padding: 1rem;
         }
         .image-container:hover {
-            background-color: var(--darkest-gray);
-            border-color: var(--dark-gray);
+            transform: scale(1.05);
         }
         .image-container img {
             width: 100%;
             height: 100%;
-            object-fit: contain;
+            object-fit: cover;
         }
 
         /** tablet **/
@@ -202,7 +198,7 @@
                     designer <a href="http://warpcast.com/PartyDAO" target="_blank">@PartyDAO</a>
                     <br>
                     <a href="http://warpcast.com/blaze" target="_blank">warpcast.com/blaze</a> 
-                    &bull; 
+                    <br>
                     <a href="http://x.com/0xblz" target="_blank">x.com/0xblz</a>
                 </p>
             </div>
