@@ -1,1 +1,243 @@
-loading...
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>blaze &mdash; software & visuals</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glightbox/dist/css/glightbox.min.css" />
+    <script src="https://kit.fontawesome.com/53df3a2a07.js" crossorigin="anonymous"></script>
+    <style>
+        /** fonts **/
+        @font-face {
+            font-family: 'Tachyo';
+            src: url('Tachyo-1.0.0.otf') format('opentype');
+            font-weight: normal;
+            font-style: normal;
+        }
+        @font-face {
+            font-family: 'Host Grotesk';
+            src: url('HostGrotesk-Regular.otf') format('opentype');
+            font-weight: normal;
+            font-style: normal;
+        }
+        @font-face {
+            font-family: 'Host Grotesk';
+            src: url('HostGrotesk-Bold.otf') format('opentype');
+            font-weight: bold;
+            font-style: normal;
+        }
+        
+        /** variables **/
+        :root {
+            --primary-font: "Host Grotesk", sans-serif;
+            --secondary-font: "Tachyo", sans-serif;
+            --primary-color: rgb(255, 71, 240);
+            --secondary-color: #479dff;
+            --light-gray:  #4e5e72;
+            --darkest-gray: #070a0c;
+            --dark-gray: #161b22;
+        }
+
+        /** reset **/
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body, html {
+            height: 100%;
+            margin: 0;
+        }
+
+        /** defaults **/
+        body {
+            font-family: var(--primary-font);
+            font-size: 16px;
+            line-height: 1em;
+            background: black;
+            color: white;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        ::selection {
+            background: black;
+            color: var(--primary-color);
+        }
+
+        hr {
+            border: 1px solid var(--primary-color);
+            border-radius: 9999px;
+            width: 1rem;
+        }
+
+        /** typography **/
+        h1, h2, p {
+            line-height: 1.4em;
+        }
+
+        strong {
+            font-weight: 700;
+        }
+
+        h1 {
+            font-size: 20px;
+            font-weight: 400;
+        }
+
+        h2 {
+            font-size: 5rem;
+            line-height: 1em;
+            font-weight: 700;
+            letter-spacing: -10px;
+            font-family: var(--secondary-font);
+            color: var(--secondary-color);
+        }
+
+        a {
+            color: white;
+            text-decoration: none;
+            cursor: pointer;
+            transition: all 0.15s ease-in-out;
+        }
+
+        a:hover,
+        a:active {
+            color: var(--primary-color);
+            text-decoration: underline;
+        }
+
+        /** layout **/
+        .container {
+            display: flex;
+            gap: 1px;
+            height: 100vh; /* Ensures the container takes full viewport height */
+            background: var(--dark-gray);
+        }
+
+        .left-view {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+            flex: 1;
+            overflow: hidden; /* Ensures no scrolling occurs here */
+            background: black;
+            padding: 1rem;
+        }
+
+        .right-view {
+            width: 30%;
+            max-width: 800px;
+            overflow-y: scroll; /* Enables vertical scrolling */
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            padding: 1rem;
+            background: black;
+        }
+        .content {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            flex: 1;
+            gap: 1rem;
+        }
+        .content:last-child {
+            justify-content: flex-end;
+        }
+        .image-container {
+            height: 320px;
+            background-color: var(--dark-gray);
+            border: 1px solid transparent;
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-shrink: 0;
+            overflow: hidden;
+            padding: 1rem;
+        }
+        .image-container:hover {
+            background-color: var(--darkest-gray);
+            border-color: var(--dark-gray);
+        }
+        .image-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+
+        /** tablet **/
+        @media (max-width: 1024px) {
+            .container {
+                flex-direction: column;
+                height: auto;
+            }
+            .right-view,
+            .left-view {
+                width: 100%;
+                max-width: 100%;
+            }
+            h2 {
+                font-size: 4rem;
+            }
+        }
+
+        /** mobile **/
+        @media (max-width: 768px) {
+            h2 {
+                font-size: 3rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="left-view">
+            <div class="content">
+                <h1>blaze</h1>
+                <hr>
+                <p>
+                    designer <a href="http://warpcast.com/PartyDAO" target="_blank">@PartyDAO</a>
+                    <br>
+                    <a href="http://warpcast.com/blaze" target="_blank">warpcast.com/blaze</a> 
+                    &bull; 
+                    <a href="http://x.com/0xblz" target="_blank">x.com/0xblz</a>
+                </p>
+            </div>
+            <div class="content">
+                <h2>software & visuals</h2>
+            </div>
+        </div>
+        <div class="right-view">
+            <a href="/images/cjs-1.jpg" class="image-container glightbox"><img src="/images/cjs-1.jpg" alt="image"/></a>
+            <a href="/images/cjs-2.jpg" class="image-container glightbox"><img src="/images/cjs-2.jpg" alt="image"/></a>
+            <a href="/images/cjs-3.jpg" class="image-container glightbox"><img src="/images/cjs-3.jpg" alt="image"/></a>
+            <a href="/images/cjs-4.jpg" class="image-container glightbox"><img src="/images/cjs-4.jpg" alt="image"/></a>
+            <a href="/images/cjs-5.jpg" class="image-container glightbox"><img src="/images/cjs-5.jpg" alt="image"/></a>
+            <a href="/images/cjs-6.jpg" class="image-container glightbox"><img src="/images/cjs-6.jpg" alt="image"/></a>
+            <a href="/images/cjs-7.jpg" class="image-container glightbox"><img src="/images/cjs-7.jpg" alt="image"/></a>
+            <a href="/images/cjs-8.jpg" class="image-container glightbox"><img src="/images/cjs-8.jpg" alt="image"/></a>
+            <a href="/images/cjs-9.jpg" class="image-container glightbox"><img src="/images/cjs-9.jpg" alt="image"/></a>
+            <a href="/images/cjs-10.jpg" class="image-container glightbox"><img src="/images/cjs-10.jpg" alt="image"/></a>
+            <a href="/images/showtime-1.jpg" class="image-container glightbox"><img src="/images/showtime-1.jpg" alt="image"/></a>
+            <a href="/images/showtime-2.jpg" class="image-container glightbox"><img src="/images/showtime-2.jpg" alt="image"/></a>
+            <a href="/images/showtime-3.jpg" class="image-container glightbox"><img src="/images/showtime-3.jpg" alt="image"/></a>
+            <a href="/images/workos-1.jpg" class="image-container glightbox"><img src="/images/workos-1.jpg" alt="image"/></a>
+            <a href="/images/workos-2.jpg" class="image-container glightbox"><img src="/images/workos-2.jpg" alt="image"/></a>
+            <a href="/images/workos-3.jpg" class="image-container glightbox"><img src="/images/workos-3.jpg" alt="image"/></a>
+        </div>
+    </div>
+<script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/gh/mcstudios/glightbox/dist/js/glightbox.min.js"></script>
+<script type="text/javascript">
+    const lightbox = GLightbox({
+    });
+
+    $(".right-view").html($(".right-view .image-container").sort(function(){
+        return Math.random()-0.5;
+    }));
+</script>
+</body>
+</html>
