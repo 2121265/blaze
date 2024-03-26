@@ -9,8 +9,14 @@
     <style>
         /** fonts **/
         @font-face {
-            font-family: 'Tachyo';
-            src: url('Tachyo-1.0.0.otf') format('opentype');
+            font-family: 'Pixel Panel';
+            src: url('PixelPanel-Bold.woff2') format('woff2');
+            font-weight: bold;
+            font-style: normal;
+        }
+        @font-face {
+            font-family: 'Pixel Panel';
+            src: url('PixelPanel-Regular.woff2') format('woff2');
             font-weight: normal;
             font-style: normal;
         }
@@ -30,7 +36,7 @@
         /** variables **/
         :root {
             --primary-font: "Host Grotesk", sans-serif;
-            --secondary-font: "Tachyo", sans-serif;
+            --secondary-font: "Pixel Panel", sans-serif;
             --primary-color: rgb(255, 71, 240);
             --secondary-color: #479dff;
             --light-gray:  #4e5e72;
@@ -76,31 +82,28 @@
         h1, h2, p {
             line-height: 1.4em;
         }
-
+        p span {
+            opacity: 0.25;
+        }
         strong {
             font-weight: 700;
         }
-
         h1 {
             font-size: 20px;
             font-weight: 400;
         }
-
         h2 {
-            font-size: 5rem;
+            font-size: 8rem;
             line-height: 1em;
             font-weight: 700;
-            letter-spacing: -10px;
             font-family: var(--secondary-font);
             color: var(--secondary-color);
         }
-
         a {
-            color: var(--primary-color);
+            color: white;
             text-decoration: none;
             transition: all 0.15s ease-in-out;
         }
-
         a:hover,
         a:active {
             color: var(--primary-color);
@@ -114,7 +117,6 @@
             height: 100vh; /* Ensures the container takes full viewport height */
             background: var(--dark-gray);
         }
-
         .left-view {
             display: flex;
             flex-direction: column;
@@ -124,13 +126,12 @@
             background: black;
             padding: 1rem;
         }
-
         .right-view {
             width: 30%;
             max-width: 800px;
             overflow-y: scroll; /* Enables vertical scrolling */
             display: flex;
-            flex-direction: column;
+            flex-wrap: wrap;
             gap: 1rem;
             padding: 1rem;
             background: black;
@@ -142,11 +143,25 @@
             flex: 1;
             gap: 1rem;
         }
+        .split {
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+            gap: 1rem;
+            flex-wrap: wrap;
+            align-items: flex-start;
+        }
+        .split > div {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
         .content:last-child {
             justify-content: flex-end;
         }
         .image-container {
-            height: 320px;
+            height: auto;
+            width: 100%;
             background-color: var(--dark-gray);
             color: white;
             display: flex;
@@ -154,6 +169,7 @@
             align-items: center;
             flex-shrink: 0;
             overflow: hidden;
+            border-radius: 2px;
         }
         .image-container:hover {
             transform: scale(1.05);
@@ -192,15 +208,20 @@
     <div class="container">
         <div class="left-view">
             <div class="content">
-                <h1>blaze</h1>
-                <hr>
-                <p>
-                    designer <a href="http://warpcast.com/PartyDAO" target="_blank">@PartyDAO</a>
-                    <br>
-                    <a href="http://warpcast.com/blaze" target="_blank">warpcast.com/blaze</a> 
-                    <br>
-                    <a href="http://x.com/0xblz" target="_blank">x.com/0xblz</a>
-                </p>
+                <div class="split">
+                    <div>
+                        <h1>blaze</h1>
+                        <hr>
+                        <p>designer <a href="http://warpcast.com/PartyDAO" target="_blank">@PartyDAO</a></p>
+                    </div>
+                    <div>
+                        <p>
+                            <a href="http://warpcast.com/blaze" target="_blank">warpcast.com/blaze</a>
+                            <span>&bull;</span>
+                            <a href="http://x.com/0xblz" target="_blank">x.com/0xblz</a>
+                        </p>
+                    </div>
+                </div>
             </div>
             <div class="content">
                 <h2>software & visuals</h2>
