@@ -103,6 +103,18 @@
             overflow: hidden; /* Ensures no scrolling occurs here */
             padding: 1.5rem;
             position: relative;
+            animation-name: fade;
+            animation-duration: 1.5s;
+            animation-timing-function: ease-in-out;
+            animation-iteration-count: 1;
+        }
+        @keyframes fade {
+            0% {
+                opacity: 0;
+            }
+            100% {
+                opacity: 1;
+            }
         }
         spline-viewer {
             top: 0;
@@ -112,7 +124,7 @@
             height: 100%;
         }
         .right-view {
-            width: 30%;
+            width: 25%;
             max-width: 800px;
             overflow-y: scroll; /* Enables vertical scrolling */
             display: flex;
@@ -120,6 +132,20 @@
             gap: 1.5rem;
             padding: 1.5rem;
             border-left: 1px solid rgba(255, 255, 255, 0.2);
+            animation-name: slide;
+            animation-duration: 0.5s;
+            animation-timing-function: cubic-bezier(1,0,.49,.66);
+            animation-iteration-count: 1;
+        }
+        @keyframes slide {
+            0% {
+                transform: translateX(100%);
+                opacity: 0;
+            }
+            100% {
+                transform: translateX(0);
+                opacity: 1;
+            }
         }
         .content {
             display: flex;
@@ -146,11 +172,9 @@
             flex-shrink: 0;
             overflow: hidden;
             border-radius: 0.5rem;
-            border: 2px solid transparent;
         }
         .image-container:hover {
             transform: scale(1.05);
-            border-color: white;
         }
         .image-container img {
             width: 100%;
