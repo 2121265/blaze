@@ -3,23 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>blaze &mdash; software & visuals</title>
+    <title>Blaze &mdash; Software & Visuals</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glightbox/dist/css/glightbox.min.css" />
     <script src="https://kit.fontawesome.com/53df3a2a07.js" crossorigin="anonymous"></script>
     <style>
         /** fonts **/
-        @font-face {
-            font-family: 'Host Grotesk';
-            src: url('HostGrotesk-Regular.otf') format('opentype');
-            font-weight: normal;
-            font-style: normal;
-        }
-        @font-face {
-            font-family: 'Host Grotesk';
-            src: url('HostGrotesk-Bold.otf') format('opentype');
-            font-weight: bold;
-            font-style: normal;
-        }
+        @import url('https://fonts.googleapis.com/css2?family=Anek+Tamil:wght@100..800&display=swap');
         @font-face {
             font-family: 'ManoloMono';
             src: url('ManoloMono.otf') format('opentype');
@@ -29,11 +18,11 @@
         
         /** variables **/
         :root {
-            --primary-font: "Host Grotesk", sans-serif;
+            --primary-font: "Anek Tamil", sans-serif;
             --secondary-font: "ManoloMono", sans-serif;
             --primary-color: #ff47f0;
             --secondary-color: #479dff;
-            --light-gray:  #9baac2;
+            --light-gray:  rgba(255,255,255,0.6);
             --darkest-gray: #070a0c;
         }
 
@@ -65,15 +54,20 @@
             color: var(--primary-color);
         }
 
+        .content:hover hr {
+            border-color: var(--secondary-color);
+        }
+
         hr {
-            border: 1px solid rgba(255, 255, 255, 0.2);
+            transition: all 0.15s ease-in-out;
+            border: 1px solid var(--primary-color);
             border-radius: 9999px;
-            width: 1rem;
+            width: 100%;
         }
 
         /** typography **/
         h1, h2, p {
-            line-height: 1.4em;
+            line-height: 1.2em;
         }
         p span {
             opacity: 0.25;
@@ -83,14 +77,13 @@
         }
         h1 {
             font-family: var(--secondary-font);
-            font-size: 24px;
+            font-size: 32px;
             font-weight: 400;
-            letter-spacing: 1px;
             color: var(--primary-color);
         }
         h2 {
-            font-size: 17px;
-            font-weight: 400;
+            font-size: 18px;
+            font-weight: 500;
         }
         a {
             color: white;
@@ -102,23 +95,10 @@
             color: var(--primary-color);
             text-decoration: underline;
         }
-        a.icon {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            line-height: 1em;
-            font-size: 1rem;
-            width: 2.5rem;
-            height: 2.5rem;
-            border-radius: 9999px;
-            color: white;
-            background-color: rgba(255, 255, 255, 0.05);
-        }
+        a.icon {}
         a.icon:hover,
         a.icon:active {
             text-decoration: none;
-            color: var(--darkest-gray);
-            background-color: white;
         }
 
         /** layout **/
@@ -233,9 +213,10 @@
             <spline-viewer url="https://prod.spline.design/Jy38QGOvDPdodrXS/scene.splinecode"></spline-viewer>
             <div class="content">
                 <h1>blaze</h1>
+                <hr>
                 <h2>I design interfaces for software and create interactive experiences. Currently working on <a href="http://party.app" target="_blank">Party.app</a> at <a href="http://warpcast.com/PartyDAO" target="_blank">PartyDAO</a>.</h2>
                 <div class="links">
-                    <a href="http://x.com/0xblz" target="_blank" class="icon"><i class="fa-brands fa-x-twitter"></i></a>
+                    <a href="http://x.com/0xblz" target="_blank" class="icon"><i class="fa-brands fa-square-x-twitter"></i></a>
                     <a href="http://linkedin.com/in/blazepollard" target="_blank" class="icon"><i class="fa-brands fa-linkedin"></i></a>
                 </div>
             </div>
