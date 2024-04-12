@@ -22,7 +22,9 @@
             --secondary-font: "ManoloMono", sans-serif;
             --primary-color: #ff47f0;
             --secondary-color: #479dff;
-            --light-gray:  rgba(255,255,255,0.6);
+            --secondary-color-opaque: rgba(71, 157, 255, 0.8);
+            --white-opaque:  rgba(255,255,255,0.3);
+            --dark-gray: #0e1216;
             --darkest-gray: #070a0c;
         }
 
@@ -44,7 +46,7 @@
             font-size: 16px;
             line-height: 1em;
             background: var(--darkest-gray);
-            color: var(--light-gray);
+            color: var(--secondary-color-opaque);
             -webkit-font-smoothing: antialiased;
             -moz-osx-font-smoothing: grayscale;
         }
@@ -70,7 +72,7 @@
             font-weight: 700;
             letter-spacing: -1px;
             color: var(--primary-color);
-\        }
+        }
         h2 {
             font-size: 18px;
             font-weight: 500;
@@ -94,7 +96,7 @@
             display: flex;
             flex-direction: column;
             justify-content: flex-end;
-            gap: 2rem;
+            gap: 1.5rem;
             flex: 1;
             overflow: hidden; /* Ensures no scrolling occurs here */
             padding: 1.5rem;
@@ -112,6 +114,7 @@
             height: 100%;
         }
         .right-view {
+            transition: all 0.15s ease-in-out;
             background-color: var(--darkest-gray);
             width: 25%;
             max-width: 800px;
@@ -125,10 +128,13 @@
             animation-timing-function: ease-in-out;
             animation-iteration-count: 1;
         }
+        .right-view:hover {
+            background: var(--dark-gray);
+        }
         .content {
             display: flex;
             flex-direction: column;
-            gap: 1.5rem;
+            gap: 0.75rem;
             width: 100%;
             max-width: 520px;
             z-index: 9;
@@ -140,7 +146,7 @@
         }
         div.links a {
             font-size: 1.5rem;
-            color: rgba(255,255,255,0.2);
+            color: var(--white-opaque);
         }
         div.links a:hover,
         div.links a:active {
@@ -149,7 +155,7 @@
         .image-container {
             height: auto;
             width: 100%;
-            background-color: black;
+            background-color: var(--darkest-gray);
             color: white;
             display: flex;
             flex-direction: column;
@@ -158,7 +164,7 @@
             overflow: hidden;
             border-radius: 1.5rem;
             padding: 0.5rem;
-            border: 2px solid rgba(255, 255, 255, 0.1);
+            border: 2px solid var(--dark-gray);
             display: none; /** hide by default **/
         }
         .image-thumbnail {
@@ -170,6 +176,7 @@
         }
         .image-container:hover {
             transform: scale(1.05);
+            color: white;
             border-color: var(--secondary-color);
         }
         .image-container img {
