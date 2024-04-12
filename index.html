@@ -22,7 +22,6 @@
             --secondary-font: "ManoloMono", sans-serif;
             --primary-color: #ff47f0;
             --secondary-color: #479dff;
-            --secondary-color-opaque: rgba(71, 157, 255, 0.8);
             --white-opaque:  rgba(255,255,255,0.3);
             --dark-gray: #0e1216;
             --darkest-gray: #070a0c;
@@ -46,7 +45,7 @@
             font-size: 16px;
             line-height: 1em;
             background: var(--darkest-gray);
-            color: var(--secondary-color-opaque);
+            color: var(--secondary-color);
             -webkit-font-smoothing: antialiased;
             -moz-osx-font-smoothing: grayscale;
         }
@@ -61,7 +60,8 @@
             line-height: 1.2em;
         }
         p span {
-            opacity: 0.25;
+            color: var(--white-opaque);
+            font-weight: 500;
         }
         strong {
             font-weight: 700;
@@ -145,7 +145,10 @@
             gap: 0.75rem;
         }
         div.links a {
-            font-size: 1.5rem;
+            font-size: 14px;
+            text-transform: uppercase;
+            font-weight: 700;
+            letter-spacing: 1px;
             color: var(--white-opaque);
         }
         div.links a:hover,
@@ -193,7 +196,7 @@
                 height: auto;
             }
             .left-view {
-                padding-top: 40vh;
+                padding-top: 50vh;
             }
             .right-view,
             .left-view {
@@ -222,23 +225,26 @@
                 <h1>blaze</h1>
                 <h2>I design interfaces for software and create interactive experiences; currently working on <a href="http://party.app" target="_blank">Party.app</a> at <a href="http://warpcast.com/PartyDAO" target="_blank">PartyDAO</a></h2>
                 <div class="links">
-                    <a href="http://x.com/0xblz" target="_blank"><i class="fa-brands fa-square-x-twitter"></i></a>
-                    <a href="http://linkedin.com/in/blazepollard" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
-                    <a href="http://codepen.io/0xblz" target="_blank"><i class="fa-brands fa-codepen"></i></a>
+                    <a href="http://x.com/0xblz" target="_blank">@0xblz</a>
+                    <a href="https://warpcast.com/blaze/" target="_blank">Farcaster</a>
+                    <a href="http://linkedin.com/in/blazepollard" target="_blank">LinkedIn</a>
                 </div>
             </div>
         </div>
         <div class="right-view">
             <!-- Showtime Web-->
-            <a href="/images/showtime-1.jpg" class="image-container image-thumbnail glightbox" data-gallery="showtimeweb"><img src="/images/showtime-1.jpg" alt="image"/><p>Showtime Web App</p></a>
+            <a href="/images/showtime-1.jpg" class="image-container image-thumbnail glightbox" data-gallery="showtimeweb"><img src="/images/showtime-1.jpg" alt="image"/><p>Showtime Web App <span>/ 2022</span></p></a>
             <a href="/images/showtime-2.jpg" class="image-container glightbox" data-gallery="showtimeweb"><img src="/images/showtime-2.jpg" alt="image"/></a>
             <a href="/images/showtime-3.jpg" class="image-container glightbox" data-gallery="showtimeweb"><img src="/images/showtime-3.jpg" alt="image"/></a>
+            <a href="/images/showtime-4.jpg" class="image-container glightbox" data-gallery="showtimeweb"><img src="/images/showtime-4.jpg" alt="image"/></a>
+            <a href="/images/showtime-5.jpg" class="image-container glightbox" data-gallery="showtimeweb"><img src="/images/showtime-5.jpg" alt="image"/></a>
+            <a href="/images/showtime-6.jpg" class="image-container glightbox" data-gallery="showtimeweb"><img src="/images/showtime-6.jpg" alt="image"/></a>
             <!-- Showtime Mobile -->
-            <a href="/images/showtime-4.jpg" class="image-container image-thumbnail glightbox" data-gallery="showtimeios"><img src="/images/showtime-4.jpg" alt="image"/><p>Showtime iOS App</p></a>
-            <a href="/images/showtime-5.jpg" class="image-container glightbox" data-gallery="showtimeios"><img src="/images/showtime-5.jpg" alt="image"/></a>
-            <a href="/images/showtime-6.jpg" class="image-container glightbox" data-gallery="showtimeios"><img src="/images/showtime-6.jpg" alt="image"/></a>
+            <a href="/images/showtimemobile-1.jpg" class="image-container image-thumbnail glightbox" data-gallery="showtimeios"><img src="/images/showtimemobile-1.jpg" alt="image"/><p>Showtime iOS App <span>/ 2021</span></p></a>
+            <a href="/images/showtimemobile-2.jpg" class="image-container glightbox" data-gallery="showtimeios"><img src="/images/showtimemobile-2.jpg" alt="image"/></a>
+            <a href="/images/showtimemobile-3.jpg" class="image-container glightbox" data-gallery="showtimeios"><img src="/images/showtimemobile-3.jpg" alt="image"/></a>
             <!-- Commerce.js -->
-            <a href="/images/cjs-1.jpg" class="image-container image-thumbnail glightbox" data-gallery="cjs"><img src="/images/cjs-1.jpg" alt="image"/><p>Commerce.js Graphics</p></a>
+            <a href="/images/cjs-1.jpg" class="image-container image-thumbnail glightbox" data-gallery="cjs"><img src="/images/cjs-1.jpg" alt="image"/><p>Commerce.js Graphics <span>/ 2021</span></p></a>
             <a href="/images/cjs-2.jpg" class="image-container glightbox" data-gallery="cjs"><img src="/images/cjs-2.jpg" alt="image"/></a>
             <a href="/images/cjs-3.jpg" class="image-container glightbox" data-gallery="cjs"><img src="/images/cjs-3.jpg" alt="image"/></a>
             <a href="/images/cjs-4.jpg" class="image-container glightbox" data-gallery="cjs"><img src="/images/cjs-4.jpg" alt="image"/></a>
@@ -247,11 +253,11 @@
             <a href="/images/cjs-7.jpg" class="image-container glightbox" data-gallery="cjs"><img src="/images/cjs-7.jpg" alt="image"/></a>
             <a href="/images/cjs-8.jpg" class="image-container glightbox" data-gallery="cjs"><img src="/images/cjs-8.jpg" alt="image"/></a>
             <!-- WorkOS -->
-            <a href="/images/workos-1.jpg" class="image-container image-thumbnail glightbox" data-gallery="workos"><img src="/images/workos-1.jpg" alt="image"/><p>WorkOS Graphics</p></a>
+            <a href="/images/workos-1.jpg" class="image-container image-thumbnail glightbox" data-gallery="workos"><img src="/images/workos-1.jpg" alt="image"/><p>WorkOS Graphics <span>/ 2021</span></p></a>
             <a href="/images/workos-2.jpg" class="image-container glightbox" data-gallery="workos"><img src="/images/workos-2.jpg" alt="image"/></a>
             <a href="/images/workos-3.jpg" class="image-container glightbox" data-gallery="workos"><img src="/images/workos-3.jpg" alt="image"/></a>
             <!-- Altimeter -->
-            <a href="/images/altimeter-1.jpg" class="image-container image-thumbnail glightbox" data-gallery="altimeter"><img src="/images/altimeter-1.jpg" alt="image"/><p>Altimeter iOS App</p></a>
+            <a href="/images/altimeter-1.jpg" class="image-container image-thumbnail glightbox" data-gallery="altimeter"><img src="/images/altimeter-1.jpg" alt="image"/><p>Altimeter iOS App <span>/ 2019</span></p></a>
         </div>
     </div>
 <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
