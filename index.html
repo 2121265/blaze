@@ -79,6 +79,7 @@
             font-family: var(--secondary-font);
             font-size: 32px;
             font-weight: 400;
+            letter-spacing: -1px;
             color: var(--primary-color);
         }
         h2 {
@@ -93,12 +94,6 @@
         a:hover,
         a:active {
             color: var(--primary-color);
-            text-decoration: underline;
-        }
-        a.icon {}
-        a.icon:hover,
-        a.icon:active {
-            text-decoration: none;
         }
 
         /** layout **/
@@ -127,6 +122,9 @@
             width: 100%;
             height: 100%;
         }
+        a.hide {
+            display: none;
+        }
         .right-view {
             background-color: var(--darkest-gray);
             width: 25%;
@@ -154,19 +152,31 @@
             flex-direction: row;
             gap: 0.5rem;
         }
+        div.links a {
+            font-size: 1.5rem;
+            color: rgba(255,255,255,0.2);
+        }
+        div.links a:hover,
+        div.links a:active {
+            color: white;
+        }
         .image-container {
             height: auto;
             width: 100%;
             background-color: black;
             color: white;
             display: flex;
-            justify-content: center;
-            align-items: center;
+            flex-direction: column;
+            gap: 0.5rem;
             flex-shrink: 0;
             overflow: hidden;
             border-radius: 1.5rem;
             padding: 0.5rem;
-            border: 1px solid rgba(255, 255, 255, 0.2);
+            border: 2px solid rgba(255, 255, 255, 0.1);
+        }
+        .image-container p {
+            text-align: center;
+            font-weight: 700;
         }
         .image-container:hover {
             transform: scale(1.05);
@@ -214,31 +224,39 @@
             <div class="content">
                 <h1>blaze</h1>
                 <hr>
-                <h2>I design interfaces for software and create interactive experiences. Currently working on <a href="http://party.app" target="_blank">Party.app</a> at <a href="http://warpcast.com/PartyDAO" target="_blank">PartyDAO</a>.</h2>
+                <h2>I design interfaces for software and create interactive experiences; currently working on <a href="http://party.app" target="_blank">Party.app</a> at <a href="http://warpcast.com/PartyDAO" target="_blank">PartyDAO</a></h2>
                 <div class="links">
-                    <a href="http://x.com/0xblz" target="_blank" class="icon"><i class="fa-brands fa-square-x-twitter"></i></a>
-                    <a href="http://linkedin.com/in/blazepollard" target="_blank" class="icon"><i class="fa-brands fa-linkedin"></i></a>
+                    <a href="http://x.com/0xblz" target="_blank"><i class="fa-brands fa-square-x-twitter"></i></a>
+                    <a href="http://linkedin.com/in/blazepollard" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
                 </div>
             </div>
         </div>
         <div class="right-view">
-            <a href="/images/altimeter-1.jpg" class="image-container glightbox"><img src="/images/altimeter-1.jpg" alt="image"/></a>
-            <a href="/images/cjs-1.jpg" class="image-container glightbox"><img src="/images/cjs-1.jpg" alt="image"/></a>
-            <a href="/images/cjs-2.jpg" class="image-container glightbox"><img src="/images/cjs-2.jpg" alt="image"/></a>
-            <a href="/images/cjs-3.jpg" class="image-container glightbox"><img src="/images/cjs-3.jpg" alt="image"/></a>
-            <a href="/images/cjs-4.jpg" class="image-container glightbox"><img src="/images/cjs-4.jpg" alt="image"/></a>
-            <a href="/images/cjs-5.jpg" class="image-container glightbox"><img src="/images/cjs-5.jpg" alt="image"/></a>
-            <a href="/images/cjs-6.jpg" class="image-container glightbox"><img src="/images/cjs-6.jpg" alt="image"/></a>
-            <a href="/images/cjs-7.jpg" class="image-container glightbox"><img src="/images/cjs-7.jpg" alt="image"/></a>
-            <a href="/images/cjs-8.jpg" class="image-container glightbox"><img src="/images/cjs-8.jpg" alt="image"/></a>
-            <a href="/images/cjs-9.jpg" class="image-container glightbox"><img src="/images/cjs-9.jpg" alt="image"/></a>
-            <a href="/images/cjs-10.jpg" class="image-container glightbox"><img src="/images/cjs-10.jpg" alt="image"/></a>
-            <a href="/images/showtime-1.jpg" class="image-container glightbox"><img src="/images/showtime-1.jpg" alt="image"/></a>
-            <a href="/images/showtime-2.jpg" class="image-container glightbox"><img src="/images/showtime-2.jpg" alt="image"/></a>
-            <a href="/images/showtime-3.jpg" class="image-container glightbox"><img src="/images/showtime-3.jpg" alt="image"/></a>
-            <a href="/images/workos-1.jpg" class="image-container glightbox"><img src="/images/workos-1.jpg" alt="image"/></a>
-            <a href="/images/workos-2.jpg" class="image-container glightbox"><img src="/images/workos-2.jpg" alt="image"/></a>
-            <a href="/images/workos-3.jpg" class="image-container glightbox"><img src="/images/workos-3.jpg" alt="image"/></a>
+            <!-- Showtime Web-->
+            <a href="/images/showtime-1.jpg" class="image-container glightbox" data-gallery="showtimeweb"><img src="/images/showtime-1.jpg" alt="image"/><p>Showtime Web App</p></a>
+            <a href="/images/showtime-2.jpg" class="image-container glightbox hide" data-gallery="showtimeweb"><img src="/images/showtime-2.jpg" alt="image"/></a>
+            <a href="/images/showtime-3.jpg" class="image-container glightbox hide" data-gallery="showtimeweb"><img src="/images/showtime-3.jpg" alt="image"/></a>
+            <!-- Showtime Mobile -->
+            <a href="/images/showtime-4.jpg" class="image-container glightbox" data-gallery="showtimeios"><img src="/images/showtime-4.jpg" alt="image"/><p>Showtime iOS App</p></a>
+            <a href="/images/showtime-5.jpg" class="image-container glightbox hide" data-gallery="showtimeios"><img src="/images/showtime-5.jpg" alt="image"/></a>
+            <a href="/images/showtime-6.jpg" class="image-container glightbox hide" data-gallery="showtimeios"><img src="/images/showtime-6.jpg" alt="image"/></a>
+            <!-- Commerce.js -->
+            <a href="/images/cjs-1.jpg" class="image-container glightbox" data-gallery="cjs"><img src="/images/cjs-1.jpg" alt="image"/><p>Commerce.js Graphics</p></a>
+            <a href="/images/cjs-2.jpg" class="image-container glightbox hide" data-gallery="cjs"><img src="/images/cjs-2.jpg" alt="image"/></a>
+            <a href="/images/cjs-3.jpg" class="image-container glightbox hide" data-gallery="cjs"><img src="/images/cjs-3.jpg" alt="image"/></a>
+            <a href="/images/cjs-4.jpg" class="image-container glightbox hide" data-gallery="cjs"><img src="/images/cjs-4.jpg" alt="image"/></a>
+            <a href="/images/cjs-5.jpg" class="image-container glightbox hide" data-gallery="cjs"><img src="/images/cjs-5.jpg" alt="image"/></a>
+            <a href="/images/cjs-6.jpg" class="image-container glightbox hide" data-gallery="cjs"><img src="/images/cjs-6.jpg" alt="image"/></a>
+            <a href="/images/cjs-7.jpg" class="image-container glightbox hide" data-gallery="cjs"><img src="/images/cjs-7.jpg" alt="image"/></a>
+            <a href="/images/cjs-8.jpg" class="image-container glightbox hide" data-gallery="cjs"><img src="/images/cjs-8.jpg" alt="image"/></a>
+            <a href="/images/cjs-9.jpg" class="image-container glightbox hide" data-gallery="cjs"><img src="/images/cjs-9.jpg" alt="image"/></a>
+            <a href="/images/cjs-10.jpg" class="image-container glightbox hide" data-gallery="cjs"><img src="/images/cjs-10.jpg" alt="image"/></a>
+            <!-- WorkOS -->
+            <a href="/images/workos-1.jpg" class="image-container glightbox" data-gallery="workos"><img src="/images/workos-1.jpg" alt="image"/><p>WorkOS Graphics</p></a>
+            <a href="/images/workos-2.jpg" class="image-container glightbox hide" data-gallery="workos"><img src="/images/workos-2.jpg" alt="image"/></a>
+            <a href="/images/workos-3.jpg" class="image-container glightbox hide" data-gallery="workos"><img src="/images/workos-3.jpg" alt="image"/></a>
+            <!-- Altimeter -->
+            <a href="/images/altimeter-1.jpg" class="image-container glightbox" data-gallery="altimeter"><img src="/images/altimeter-1.jpg" alt="image"/><p>Altimeter iOS App</p></a>
         </div>
     </div>
 <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
@@ -246,10 +264,6 @@
 <script type="text/javascript">
     const lightbox = GLightbox({
     });
-
-    $(".right-view").html($(".right-view .image-container").sort(function(){
-        return Math.random()-0.5;
-    }));
 </script>
 </body>
 </html>
