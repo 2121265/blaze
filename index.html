@@ -44,7 +44,7 @@
             font-family: var(--primary-font);
             font-size: 16px;
             line-height: 1em;
-            background: var(--darkest-gray);
+            background: white;
             color: var(--secondary-color);
             -webkit-font-smoothing: antialiased;
             -moz-osx-font-smoothing: grayscale;
@@ -73,17 +73,12 @@
             letter-spacing: -1px;
             color: var(--primary-color);
         }
-        h1 span {
-            color: white;
-            font-weight: 400;
-            opacity: 0.1;
-        }
         h2 {
             font-size: 18px;
             font-weight: 500;
         }
         a {
-            color: white;
+            color: var(--darkest-gray);
             text-decoration: none;
             transition: all 0.15s ease-in-out;
         }
@@ -120,7 +115,7 @@
         }
         .right-view {
             transition: all 0.15s ease-in-out;
-            background-color: var(--darkest-gray);
+            background-color: white;
             width: 25%;
             max-width: 800px;
             overflow-y: scroll; /* Enables vertical scrolling */
@@ -133,9 +128,6 @@
             animation-timing-function: ease-in-out;
             animation-iteration-count: 1;
         }
-        .right-view:hover {
-            background: var(--dark-gray);
-        }
         .content {
             display: flex;
             flex-direction: column;
@@ -147,29 +139,30 @@
         .image-container {
             height: auto;
             width: 100%;
-            background-color: var(--darkest-gray);
-            color: white;
+            color: var(--darkest-gray);
             display: flex;
             flex-direction: column;
             gap: 0.5rem;
             flex-shrink: 0;
             overflow: hidden;
-            border-radius: 1.5rem;
-            padding: 0.5rem;
-            border: 2px solid var(--dark-gray);
             display: none; /** hide by default **/
         }
         .image-thumbnail {
             display: flex; /** show thumbnail **/
         }
-        .image-container p {
-            text-align: center;
+        .image-container div {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .image-container div p {
             font-weight: 700;
+        }
+        .image-container div span {
+            font-weight: 400;
         }
         .image-container:hover {
             transform: scale(1.05);
-            color: white;
-            border-color: var(--secondary-color);
         }
         .image-container img {
             width: 100%;
@@ -218,18 +211,27 @@
         </div>
         <div class="right-view">
             <!-- Showtime Web-->
-            <a href="/images/showtime-1.jpg" class="image-container image-thumbnail glightbox" data-gallery="showtimeweb"><img src="/images/showtime-1.jpg" alt="image"/><p>Showtime<span> / 2022</span></p></a>
+            <a href="/images/showtime-1.jpg" class="image-container image-thumbnail glightbox" data-gallery="showtimeweb">
+                <img src="/images/showtime-1.jpg" alt="image"/>
+                <div><p>Showtime</p><span>2022</span></div>
+            </a>
             <a href="/images/showtime-2.jpg" class="image-container glightbox" data-gallery="showtimeweb"><img src="/images/showtime-2.jpg" alt="image"/></a>
             <a href="/images/showtime-3.jpg" class="image-container glightbox" data-gallery="showtimeweb"><img src="/images/showtime-3.jpg" alt="image"/></a>
             <a href="/images/showtime-4.jpg" class="image-container glightbox" data-gallery="showtimeweb"><img src="/images/showtime-4.jpg" alt="image"/></a>
             <a href="/images/showtime-5.jpg" class="image-container glightbox" data-gallery="showtimeweb"><img src="/images/showtime-5.jpg" alt="image"/></a>
             <a href="/images/showtime-6.jpg" class="image-container glightbox" data-gallery="showtimeweb"><img src="/images/showtime-6.jpg" alt="image"/></a>
             <!-- Showtime Mobile -->
-            <a href="/images/showtimemobile-1.jpg" class="image-container image-thumbnail glightbox" data-gallery="showtimeios"><img src="/images/showtimemobile-1.jpg" alt="image"/><p>Showtime for iOS <span>/ 2021</span></p></a>
+            <a href="/images/showtimemobile-1.jpg" class="image-container image-thumbnail glightbox" data-gallery="showtimeios">
+                <img src="/images/showtimemobile-1.jpg" alt="image"/>
+                <div><p>Showtime for iOS</p><span>2021</span></div>
+            </a>
             <a href="/images/showtimemobile-2.jpg" class="image-container glightbox" data-gallery="showtimeios"><img src="/images/showtimemobile-2.jpg" alt="image"/></a>
             <a href="/images/showtimemobile-3.jpg" class="image-container glightbox" data-gallery="showtimeios"><img src="/images/showtimemobile-3.jpg" alt="image"/></a>
             <!-- Commerce.js -->
-            <a href="/images/cjs-1.jpg" class="image-container image-thumbnail glightbox" data-gallery="cjs"><img src="/images/cjs-1.jpg" alt="image"/><p>Commerce.js Graphics <span>/ 2021</span></p></a>
+            <a href="/images/cjs-1.jpg" class="image-container image-thumbnail glightbox" data-gallery="cjs">
+                <img src="/images/cjs-1.jpg" alt="image"/>
+                <div><p>Commerce.js Graphics</p><span>2021</span></div>
+            </a>
             <a href="/images/cjs-2.jpg" class="image-container glightbox" data-gallery="cjs"><img src="/images/cjs-2.jpg" alt="image"/></a>
             <a href="/images/cjs-3.jpg" class="image-container glightbox" data-gallery="cjs"><img src="/images/cjs-3.jpg" alt="image"/></a>
             <a href="/images/cjs-4.jpg" class="image-container glightbox" data-gallery="cjs"><img src="/images/cjs-4.jpg" alt="image"/></a>
@@ -238,11 +240,17 @@
             <a href="/images/cjs-7.jpg" class="image-container glightbox" data-gallery="cjs"><img src="/images/cjs-7.jpg" alt="image"/></a>
             <a href="/images/cjs-8.jpg" class="image-container glightbox" data-gallery="cjs"><img src="/images/cjs-8.jpg" alt="image"/></a>
             <!-- WorkOS -->
-            <a href="/images/workos-1.jpg" class="image-container image-thumbnail glightbox" data-gallery="workos"><img src="/images/workos-1.jpg" alt="image"/><p>WorkOS Graphics <span>/ 2021</span></p></a>
+            <a href="/images/workos-1.jpg" class="image-container image-thumbnail glightbox" data-gallery="workos">
+                <img src="/images/workos-1.jpg" alt="image"/>
+                <div><p>WorkOS Graphics</p><span>2021</span></div>
+            </a>
             <a href="/images/workos-2.jpg" class="image-container glightbox" data-gallery="workos"><img src="/images/workos-2.jpg" alt="image"/></a>
             <a href="/images/workos-3.jpg" class="image-container glightbox" data-gallery="workos"><img src="/images/workos-3.jpg" alt="image"/></a>
             <!-- Altimeter -->
-            <a href="/images/altimeter-1.jpg" class="image-container image-thumbnail glightbox" data-gallery="altimeter"><img src="/images/altimeter-1.jpg" alt="image"/><p>Altimeter for iOS <span>/ 2019</span></p></a>
+            <a href="/images/altimeter-1.jpg" class="image-container image-thumbnail glightbox" data-gallery="altimeter">
+                <img src="/images/altimeter-1.jpg" alt="image"/>
+                <div><p>Altimeter for iOS</p><span>2019</span></div>
+            </a>
         </div>
     </div>
 <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
