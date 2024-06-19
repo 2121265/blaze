@@ -23,9 +23,8 @@
             --primary-color: #ff47f0;
             --secondary-color: #479dff;
             --light-gray:  #f1f4fc;
-            --gray:  #9DA6AF;
-            --dark-gray: #0e1216;
-            --darkest-gray: #070a0c;
+            --dark-gray: #424f5c;
+            --opaque: #0f2949be;
         }
 
         /** reset **/
@@ -45,8 +44,8 @@
             font-family: var(--primary-font);
             font-size: 16px;
             line-height: 1em;
-            background: var(--gray);
-            color: var(--darkest-gray);
+            background: white;
+            color: var(--dark-gray);
             -webkit-font-smoothing: antialiased;
             -moz-osx-font-smoothing: grayscale;
         }
@@ -64,7 +63,6 @@
             font-weight: 700;
         }
         h1 {
-            font-family: var(--secondary-font);
             font-size: 26px;
             font-weight: 700;
             letter-spacing: -1px;
@@ -76,7 +74,7 @@
             font-weight: 500;
         }
         a {
-            color: var(--darkest-gray);
+            color: var(--dark-gray);
             text-decoration: none;
             font-weight: 600;
             transition: all 0.15s ease-in-out;
@@ -87,6 +85,16 @@
         }
 
         /** layout **/
+        .avatar {
+            display: flex;
+            gap: 0.5rem;
+            align-items: center;
+        }
+        .avatar img {
+            width: 2rem;
+            height: 2rem;
+            border-radius: 100%;
+        }
         .container {
             display: flex;
             height: 100vh; /* Ensures the container takes full viewport height */
@@ -134,8 +142,6 @@
             width: 100%;
             max-width: 520px;
             z-index: 9;
-            border-left: 0.5rem solid white;
-            padding-left: 1rem;
         }
         .image-container {
             height: auto;
@@ -146,27 +152,42 @@
             flex-shrink: 0;
             overflow: hidden;
             display: none; /** hide by default **/
+            position: relative;
+            border-radius: 0.75rem;
         }
         .image-thumbnail {
             display: flex; /** show thumbnail **/
         }
         .image-container div {
+            transition: all 0.15s ease-in-out;
             display: flex;
-            justify-content: space-between;
+            flex-direction: column;
             align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            position: absolute;
+            bottom: 0;
+            color: white;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            padding: 0.5rem;
+            background-color: var(--opaque);
+            opacity: 0;
         }
         .image-container div span {
-            color: var(--gray);
+            opacity: 0.6;
         }
         .image-container:hover {
             transform: scale(1.05);
+        }
+        .image-container:hover div {
+            opacity: 1;
         }
         .image-container img {
             width: 100%;
             height: 100%;
             object-fit: cover;
-            border-radius: 0.75rem;
-            border: 4px solid white;
         }
 
         /** tablet **/
@@ -202,7 +223,10 @@
             <script type="module" src="https://unpkg.com/@splinetool/viewer@1.0.86/build/spline-viewer.js"></script>
             <spline-viewer url="https://prod.spline.design/Jy38QGOvDPdodrXS/scene.splinecode"></spline-viewer>
             <div class="content">
-                <h1>blaze</h1>
+                <div class="avatar">
+                    <img src="https://f8n-production.imgix.net/creators/profile/pq2wv021f.jpeg"/>
+                    <h1>blaze</h1>
+                </div>
                 <h2>I design interfaces for software and create interactive visuals; currently working on <a href="http://party.app" target="_blank">Party.app</a> at <a href="http://x.com/prtyDAO" target="_blank">PartyDAO</a></h2>
                 <h2>
                     <a href="http://x.com/0xblz" target="_blank">@0xblz</a> / 
@@ -215,7 +239,7 @@
             <!-- Showtime Web-->
             <a href="/images/showtime-1.jpg" class="image-container image-thumbnail glightbox" data-gallery="showtimeweb">
                 <img src="/images/showtime-1.jpg" alt="image"/>
-                <div><p>Showtime</p><span>2022</span></div>
+                <div><p>Showtime</p><span>UI / UX • 2022</span></div>
             </a>
             <a href="/images/showtime-2.jpg" class="image-container glightbox" data-gallery="showtimeweb"><img src="/images/showtime-2.jpg" alt="image"/></a>
             <a href="/images/showtime-3.jpg" class="image-container glightbox" data-gallery="showtimeweb"><img src="/images/showtime-3.jpg" alt="image"/></a>
@@ -225,14 +249,14 @@
             <!-- Showtime Mobile -->
             <a href="/images/showtimemobile-1.jpg" class="image-container image-thumbnail glightbox" data-gallery="showtimeios">
                 <img src="/images/showtimemobile-1.jpg" alt="image"/>
-                <div><p>Showtime for iOS</p><span>2021</span></div>
+                <div><p>Showtime for iOS</p><span>UI / UX • 2021</span></div>
             </a>
             <a href="/images/showtimemobile-2.jpg" class="image-container glightbox" data-gallery="showtimeios"><img src="/images/showtimemobile-2.jpg" alt="image"/></a>
             <a href="/images/showtimemobile-3.jpg" class="image-container glightbox" data-gallery="showtimeios"><img src="/images/showtimemobile-3.jpg" alt="image"/></a>
             <!-- Commerce.js -->
             <a href="/images/cjs-1.jpg" class="image-container image-thumbnail glightbox" data-gallery="cjs">
                 <img src="/images/cjs-1.jpg" alt="image"/>
-                <div><p>Commerce.js Graphics</p><span>2021</span></div>
+                <div><p>Commerce.js</p><span>Graphics • 2021</span></div>
             </a>
             <a href="/images/cjs-2.jpg" class="image-container glightbox" data-gallery="cjs"><img src="/images/cjs-2.jpg" alt="image"/></a>
             <a href="/images/cjs-3.jpg" class="image-container glightbox" data-gallery="cjs"><img src="/images/cjs-3.jpg" alt="image"/></a>
@@ -244,14 +268,14 @@
             <!-- WorkOS -->
             <a href="/images/workos-1.jpg" class="image-container image-thumbnail glightbox" data-gallery="workos">
                 <img src="/images/workos-1.jpg" alt="image"/>
-                <div><p>WorkOS Graphics</p><span>2021</span></div>
+                <div><p>WorkOS</p><span>Graphics • 2021</span></div>
             </a>
             <a href="/images/workos-2.jpg" class="image-container glightbox" data-gallery="workos"><img src="/images/workos-2.jpg" alt="image"/></a>
             <a href="/images/workos-3.jpg" class="image-container glightbox" data-gallery="workos"><img src="/images/workos-3.jpg" alt="image"/></a>
             <!-- Altimeter -->
             <a href="/images/altimeter-1.jpg" class="image-container image-thumbnail glightbox" data-gallery="altimeter">
                 <img src="/images/altimeter-1.jpg" alt="image"/>
-                <div><p>Altimeter for iOS</p><span>2019</span></div>
+                <div><p>Altimeter for iOS</p><span>Visual Design • 2019</span></div>
             </a>
         </div>
     </div>
